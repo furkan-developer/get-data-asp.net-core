@@ -11,6 +11,13 @@ namespace BtkCamp.Controllers
 {
     public class CourseController : Controller
     {
+        private readonly ICollection<Candidate> _candidates;
+
+        public CourseController(ICollection<Candidate> candidates)
+        {
+            this._candidates = candidates;
+        }
+
         public IActionResult Index()
         {
             return View();
