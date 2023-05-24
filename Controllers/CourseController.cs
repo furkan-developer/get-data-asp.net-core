@@ -20,7 +20,7 @@ namespace BtkCamp.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View(model:_candidates);
         }
 
         public IActionResult Apply()
