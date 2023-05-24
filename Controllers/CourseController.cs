@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using BtkCamp.Models;
 
 namespace BtkCamp.Controllers
 {
@@ -14,8 +15,14 @@ namespace BtkCamp.Controllers
         {
             return View();
         }
-        
+
         public IActionResult Apply()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Apply(Candidate candidate)
         {
             return View();
         }
