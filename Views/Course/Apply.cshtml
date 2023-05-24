@@ -1,26 +1,28 @@
+@model Candidate
+
 <div class="display-6">
     Apply
 </div>
 
-<form method="post" action="/course/apply">
+<form method="post" asp-action="apply">
     <div class="form-group my-2">
         <label>Email</label>
-        <input name="Email" class="form-control" />
+        <input asp-for="Email" class="form-control" />
     </div>
 
     <div class="form-group my-2">
         <label>Firstname</label>
-        <input name="FirstName" class="form-control" />
+        <input asp-for="FirstName" class="form-control" />
     </div>
 
     <div class="form-group my-2">
         <label>Lastname</label>
-        <input name="Lastname" class="form-control" />
+        <input asp-for="LastName" class="form-control" />
     </div>
 
     <div class="form-group my-2">
         <label>Age</label>
-        <select name="Age" class="form-control">
+        <select asp-for="Age" class="form-control">
             <option value="18">18</option>
             <option value="19">19</option>
             <option value="20">20</option>
@@ -33,15 +35,15 @@
     <fieldset>
         <legend>Select One Course</legend>
         <p>
-            <input id="mvc" type="radio" name="SelectedCourse" value="ASP.NET Core MVC" checked/>
+            <input id="mvc" type="radio" asp-for="SelectedCourse" value="ASP.NET Core MVC" checked/>
             <label>ASP.NET Core MVC</label>
         </p>
         <p>
-            <input id="api" type="radio" name="SelectedCourse" value="ASP.NET Core API" />
+            <input id="api" type="radio" asp-for="SelectedCourse" value="ASP.NET Core API" />
             <label>ASP.NET Core API</label>
         </p>
         <p>
-            <input id="api" type="radio" name="SelectedCourse" value="Blazor" />
+            <input id="api" type="radio" asp-for="SelectedCourse" value="Blazor" />
             <label>Blazor</label>
         </p>
     </fieldset>
