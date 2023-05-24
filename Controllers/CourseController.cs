@@ -29,6 +29,7 @@ namespace BtkCamp.Controllers
         }
 
         [HttpPost]
+        [AutoValidateAntiforgeryToken]
         public IActionResult Apply(Candidate candidate)
         {
             if(ModelState.IsValid)
