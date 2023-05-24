@@ -31,8 +31,13 @@ namespace BtkCamp.Controllers
         [HttpPost]
         public IActionResult Apply(Candidate candidate)
         {
-            _candidates.Add(candidate);
-            return View(viewName: "ApplyFeedBack", model: candidate);
+            if(ModelState.IsValid)
+            {
+                _candidates.Add(candidate);
+                return View(viewName: "ApplyFeedBack", model: candidate);
+            }
+            
+            return View(candidate);
         }
     }
 }
