@@ -2,6 +2,13 @@
 
 @if (Model.Count > 0)
 {
+    if (TempData["InsertStatus"] != null)
+    {
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            @TempData["InsertStatus"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
     <h6 class="display-6">
         Applications(@Model.Count())
     </h6>

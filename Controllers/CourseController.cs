@@ -35,7 +35,9 @@ namespace BtkCamp.Controllers
             if(ModelState.IsValid)
             {
                 _candidates.Add(candidate);
-                return View(viewName: "ApplyFeedBack", model: candidate);
+                TempData["InsertStatus"] = "Ekleme işlemi başarılıdır.";
+
+                return RedirectToAction("Index");
             }
             
             return View(candidate);
