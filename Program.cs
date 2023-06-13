@@ -1,9 +1,18 @@
 using BtkCamp.Models;
+using BtkCamp.Models.Validators;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// builder.Services.AddFluentValidation(f => f.RegisterValidatorsFromAssemblyContaining<Program>());
+
+builder.Services.AddFluentValidation();
+builder.Services.AddScoped<IValidator<Candidate>,CandidateValidator>();
+
 
 builder.Services.AddSingleton<ICollection<Candidate>>(new List<Candidate>());
 
